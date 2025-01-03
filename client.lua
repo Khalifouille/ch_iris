@@ -64,7 +64,13 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
         if spawned and DoesEntityExist(ped) then
             local pedCoords = GetEntityCoords(ped)
-            DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1.0, "Iris")
+            local playerCoords = GetEntityCoords(PlayerPedId())
+            local distance = #(playerCoords - pedCoords)
+
+            if distance < 5.0 then
+                DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1.0, "Iris")
+            end
+
             if IsPedDeadOrDying(ped, true) then
                 local killer = GetPedSourceOfDeath(ped)
                 if killer and IsEntityAPed(killer) and IsPedAPlayer(killer) then
