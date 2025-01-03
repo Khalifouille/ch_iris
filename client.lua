@@ -47,7 +47,7 @@ function DrawText3D(x, y, z, text)
 
     if onScreen then
         SetTextScale(scale, scale)
-        SetTextFont(4)
+        SetTextFont(2)
         SetTextProportional(1)
         SetTextColour(255, 255, 255, 215)
         SetTextEntry("STRING")
@@ -68,7 +68,7 @@ Citizen.CreateThread(function()
             local distance = #(playerCoords - pedCoords)
 
             if distance < 5.0 then
-                DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1.0, "Iris")
+                DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1.0, "IRIS")
             end
 
             if IsPedDeadOrDying(ped, true) then
