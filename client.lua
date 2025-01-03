@@ -37,6 +37,7 @@ Citizen.CreateThread(function()
         SetPedCanRagdoll(ped, false)
         SetModelAsNoLongerNeeded(GetHashKey(pedModel))
         TaskStartScenarioInPlace(ped, "WORLD_HUMAN_STAND_IMPATIENT", 0, true)
+        print("Ped interaction scenario started")
     end
 end)
 
@@ -69,6 +70,10 @@ Citizen.CreateThread(function()
 
             if distance < 5.0 then
                 DrawText3D(pedCoords.x, pedCoords.y, pedCoords.z + 1.0, "IRIS")
+
+                if IsControlJustPressed(1, 51) then
+                    TriggerEvent('chat:addMessage', { args = { '^5IRIS : ', 'Me tue pas car je suis BAAD HORNYY !' } })
+                end
             end
 
             if IsPedDeadOrDying(ped, true) then
