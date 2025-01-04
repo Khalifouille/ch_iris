@@ -37,7 +37,6 @@ Citizen.CreateThread(function()
         SetPedCanRagdoll(ped, false)
         SetModelAsNoLongerNeeded(GetHashKey(pedModel))
         TaskStartScenarioInPlace(ped, "WORLD_HUMAN_STAND_IMPATIENT", 0, true)
-        print("Ped interaction scenario started")
     end
 end)
 
